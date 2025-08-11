@@ -185,9 +185,9 @@ end
 
 KensakuPicker._build_grep_cmd = function(self)
   local search = require "obsidian.search"
-  local search_opts = search.SearchOpts.from_tbl {
-    sort_by = self.client.opts.sort_by,
-    sort_reversed = self.client.opts.sort_reversed,
+  local search_opts = search.SearchOpts.as_tbl {
+    sort_by = Obsidian.opts.sort_by,
+    sort_reversed = Obsidian.opts.sort_reversed,
     smart_case = true,
   }
   return search.build_grep_cmd(search_opts)
